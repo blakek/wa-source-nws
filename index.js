@@ -104,7 +104,9 @@ function getLocalWeatherXML(location, callback) {
 	var doc = new xmldoc.XmlDocument(fs.readFileSync(__dirname + parseURI(LOCAL_XML_URI, location)).toString())
 	  , parameters = doc.descendantWithPath('data.parameters')
 	  , temps = {}
-	  , pops_hourly = [];
+	  , pops_hourly = []
+	  , daily_hazard_summary = []
+	  , hazards = {};
 
 	parameters.childrenNamed('temperature').forEach(function (n) {
 		temps[n.attr.type] = n;
@@ -114,10 +116,26 @@ function getLocalWeatherXML(location, callback) {
 		pops_hourly.push(pop.val);
 	});
 
+	parameters.childrenNamed('convective-hazard').forEach(function (ch) {
+		var sc = ch.childNamed('severe-component');
+
+		if (sc === null) {
+			ch.childNamed('outlook').childrenNamed('value').forEach(function (day) {
+				daily_hazard_summary.push(day.val);
+			});
+		} else {
+			hazards[sc.attr.type] = {
+				name: sc.valueWithPath('name'),
+				value: sc.valueWithPath('value')
+			};
+		}
+	});
+
 	callback(null, {
 		parameters: parameters,
 		temps: temps,
-		pops_hourly: pops_hourly
+		pops_hourly: pops_hourly,
+		daily_hazard_summary: daily_hazard_summary
 	});
 }
 
@@ -155,6 +173,9 @@ function getWeatherData(location, on_finish) {
 					latitude: results.j.location.latitude,
 					longitude: results.j.location.longitude,
 					name: results.j.location.areaDescription
+				},
+				hazard_outlook: {
+					hazard_summary: results.x.daily_hazard_summary
 				},
 				nearest_storm: results.s.closestStorm,
 				nearby_wwa: { // Nearby watches, warnings, and alerts
