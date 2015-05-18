@@ -12,15 +12,6 @@ var options = {
 	alertRange: 50
 };
 
-function source() {
-	return {
-		id: 'nws-testing', // What we use to identify this source (required)
-		name: 'National Weather Service (under testing)', // Human-readable name of the source (required)
-		source_site: 'http://www.weather.gov/', // Website of source for info (optional)
-		last_call: undefined // Last time this source was called. Used for caching request results (esp. to keep from using up free API keys)
-	};
-}
-
 function now() {
 	return Math.floor(Date.now() / 1000);
 }
