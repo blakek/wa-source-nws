@@ -1,4 +1,5 @@
 var fs = require('fs')
+  , path = require('path')
   , async = require('async')
   , xmldoc = require('xmldoc')
   , geolib = require('geolib')
@@ -152,7 +153,7 @@ function getWeatherData(location, on_finish) {
 					temp: results.x.temps.hourly.valueWithPath('value'),
 					temp_apparent: results.x.temps.apparent.valueWithPath('value'),
 					conditions: results.j.currentobservation.Weather,
-					icon: results.x.parameters.childNamed('conditions-icon').valueWithPath('icon-link'),
+					icon: nws2waIcon(results.x.parameters.childNamed('conditions-icon').valueWithPath('icon-link')),
 					precipitation: {
 						probability: results.j.data.pop[0]
 					},
@@ -167,7 +168,7 @@ function getWeatherData(location, on_finish) {
 						low: results.x.temps.minimum.valueWithPath('value')
 					},
 					summary: results.j.data.text[0],
-					icon: results.j.data.iconLink[0]
+					icon: nws2waIcon(results.j.data.iconLink[0])
 				}
 			};
 
@@ -188,6 +189,70 @@ function getWeatherData(location, on_finish) {
 			on_finish(lastResults);
 		}
 	);
+}
+
+function nws2waIcon(origText) {
+	var origIcon = path.basename(origText, path.extname(origText)).match(/[a-zA-Z\-]+/g).toString();
+
+	switch (origIcon) {
+		case 'bkn':
+		case 'nbkn':
+		case 'ovc':
+		case 'novc':
+			return 'cloudy';
+		case 'skc':
+			return 'day-sunny';
+		case 'nskc':
+			return 'night-clear';
+		case 'few':
+			return 'day-sunny-overcast';
+		case 'sct':
+			return 'day-cloudy';
+		case 'nfew':
+		case 'nsct':
+			return 'night-cloudy';
+		case 'fg':
+		case 'nfg':
+			return 'fog';
+		case 'fzra':
+		case 'ip':
+		case 'mix':
+		case 'raip':
+		case 'rasn':
+		case 'fzrara':
+			return 'rain-mix';
+		case 'nmix':
+		case 'nrasn':
+			return 'night-rain-mix';
+		case 'shra':
+		case 'hi_shwrs':
+		case 'hi_nshwrs':
+		case 'ra1':
+		case 'nra':
+			return 'showers';
+		case 'tsra':
+		case 'hi_tsra':
+			return 'storm-showers';
+		case 'ntsra':
+		case 'hi_ntsra':
+			return 'night-alt-storm-showers';
+		case 'sn':
+			return 'day-snow';
+		case 'nsn':
+			return 'night-snow';
+		case 'wind':
+		case 'nwind':
+			return 'strong-wind';
+		case 'ra':
+		case 'nra':
+			return 'wi-rain';
+		case 'nsvrtsra':
+			return 'tornado';
+		case 'mist':
+			return 'dust';
+		default:
+			return origIcon;
+	}
 }
 
 module.exports = {
