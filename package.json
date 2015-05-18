@@ -16,7 +16,7 @@
     "node": true,
     "laxcomma": true
   },
-  "author": "Blake Knight <oss.ideas@gmail.com>",
+  "author": "Blake Knight <oss.ideas@gmail.com> (http://blakek.me/)",
   "license": "MIT",
   "dependencies": {
     "async": "^0.9.0",
