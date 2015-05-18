@@ -1,0 +1,14 @@
+[
+	{
+		"name": "nws-local.json",
+		"uri": "http://forecast.weather.gov/MapClick.php?textField1=33.46&textField2=-88.80&FcstType=json"
+	},
+	{
+		"name": "nws-national-alerts.xml",
+		"uri": "http://alerts.weather.gov/cap/us.php?x=0"
+	},
+	{
+		"name": "nws-local-test.xml",
+		"uri": "http://graphical.weather.gov/xml/SOAP_server/ndfdXMLclient.php?whichClient=NDFDgen&lat=33.46&lon=-88.80&zipCodeList=&centerPointLat=&centerPointLon=&distanceLat=&distanceLon=&featureType=&requestedTime=&startTime=&endTime=&compType=&propertyName=&product=time-series&begin=2015-05-11T00%3A00%3A00&end=2015-05-18T00%3A00%3A00&Unit=e&maxt=maxt&mint=mint&temp=temp&qpf=qpf&pop12=pop12&snow=snow&wspd=wspd&wdir=wdir&wx=wx&icons=icons&appt=appt&conhazo=conhazo&ptornado=ptornado&phail=phail&ptstmwinds=ptstmwinds&pxtornado=pxtornado&pxhail=pxhail&pxtstmwinds=pxtstmwinds&ptotsvrtstm=ptotsvrtstm&pxtotsvrtstm=pxtotsvrtstm&wwa=wwa"
+	}
+]

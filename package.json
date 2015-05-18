@@ -1,0 +1,26 @@
+{
+  "name": "wa-source-nws",
+  "version": "0.1.0",
+  "description": "weather-aware source library using the National Weather Service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "weather-aware",
+    "weather",
+    "aware",
+    "nws"
+  ],
+  "jshintConfig": {
+    "node": true,
+    "laxcomma": true
+  },
+  "author": "Blake Knight <oss.ideas@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^0.9.0",
+    "geolib": "^2.0.14",
+    "moment": "^2.10.3"
+  }
+}

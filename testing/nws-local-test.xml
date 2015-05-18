@@ -1,0 +1,770 @@
+<?xml version="1.0"?>
+<dwml version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.nws.noaa.gov/forecasts/xml/DWMLgen/schema/DWML.xsd">
+  <head>
+    <product srsName="WGS 1984" concise-name="time-series" operational-mode="official">
+      <title>NOAA's National Weather Service Forecast Data</title>
+      <field>meteorological</field>
+      <category>forecast</category>
+      <creation-date refresh-frequency="PT1H">2015-05-13T19:26:46Z</creation-date>
+    </product>
+    <source>
+      <more-information>http://www.nws.noaa.gov/forecasts/xml/</more-information>
+      <production-center>Meteorological Development Laboratory<sub-center>Product Generation Branch</sub-center></production-center>
+      <disclaimer>http://www.nws.noaa.gov/disclaimer.html</disclaimer>
+      <credit>http://www.weather.gov/</credit>
+      <credit-logo>http://www.weather.gov/images/xml_logo.gif</credit-logo>
+      <feedback>http://www.weather.gov/feedback.php</feedback>
+    </source>
+  </head>
+  <data>
+    <location>
+      <location-key>point1</location-key>
+      <point latitude="27.84" longitude="-98.43"/>
+    </location>
+    <moreWeatherInformation applicable-location="point1">http://forecast.weather.gov/MapClick.php?textField1=27.84&amp;textField2=-98.43</moreWeatherInformation>
+    <time-layout time-coordinate="local" summarization="none">
+      <layout-key>k-p24h-n5-1</layout-key>
+      <start-valid-time>2015-05-13T08:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-13T20:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-14T08:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-14T20:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-15T08:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-15T20:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-16T08:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-16T20:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-17T08:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-17T20:00:00-05:00</end-valid-time>
+    </time-layout>
+    <time-layout time-coordinate="local" summarization="none">
+      <layout-key>k-p24h-n5-2</layout-key>
+      <start-valid-time>2015-05-13T20:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-14T09:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-14T20:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-15T09:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-15T20:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-16T09:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-16T20:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-17T09:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-17T20:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-18T09:00:00-05:00</end-valid-time>
+    </time-layout>
+    <time-layout time-coordinate="local" summarization="none">
+      <layout-key>k-p12h-n10-3</layout-key>
+      <start-valid-time>2015-05-13T07:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-13T19:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-13T19:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-14T07:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-14T07:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-14T19:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-14T19:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-15T07:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-15T07:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-15T19:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-15T19:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-16T07:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-16T07:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-16T19:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-16T19:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-17T07:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-17T07:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-17T19:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-17T19:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-18T07:00:00-05:00</end-valid-time>
+    </time-layout>
+    <time-layout time-coordinate="local" summarization="none">
+      <layout-key>k-p3h-n27-4</layout-key>
+      <start-valid-time>2015-05-13T16:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-13T19:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-13T22:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T01:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T04:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T07:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T10:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T13:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T16:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T19:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T22:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-15T01:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-15T04:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-15T07:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-15T10:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-15T13:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-15T16:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-15T19:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-16T01:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-16T07:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-16T13:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-16T19:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-17T01:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-17T07:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-17T13:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-17T19:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-18T01:00:00-05:00</start-valid-time>
+    </time-layout>
+    <time-layout time-coordinate="local" summarization="none">
+      <layout-key>k-p6h-n9-5</layout-key>
+      <start-valid-time>2015-05-13T13:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-13T19:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-13T19:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-14T01:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-14T01:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-14T07:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-14T07:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-14T13:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-14T13:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-14T19:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-14T19:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-15T01:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-15T01:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-15T07:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-15T07:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-15T13:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-15T13:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-15T19:00:00-05:00</end-valid-time>
+    </time-layout>
+    <time-layout time-coordinate="local" summarization="none">
+      <layout-key>k-p1h-n61-6</layout-key>
+      <start-valid-time>2015-05-13T15:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-13T16:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-13T17:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-13T18:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-13T19:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-13T20:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-13T21:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-13T22:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-13T23:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T00:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T01:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T02:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T03:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T04:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T05:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T06:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T07:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T08:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T09:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T10:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T11:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T12:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T13:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T14:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T15:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T16:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T17:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T18:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T19:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T20:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T21:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T22:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-14T23:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-15T00:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-15T01:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-15T02:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-15T03:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-15T04:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-15T05:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-15T06:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-15T07:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-15T08:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-15T09:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-15T10:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-15T11:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-15T12:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-15T13:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-15T14:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-15T15:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-15T16:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-15T17:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-15T18:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-15T19:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-16T01:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-16T07:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-16T13:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-16T19:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-17T01:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-17T07:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-17T13:00:00-05:00</start-valid-time>
+      <start-valid-time>2015-05-17T19:00:00-05:00</start-valid-time>
+    </time-layout>
+    <time-layout time-coordinate="local" summarization="none">
+      <layout-key>k-p24h-n3-7</layout-key>
+      <start-valid-time>2015-05-13T13:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-14T07:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-14T07:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-15T07:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-15T07:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-16T07:00:00-05:00</end-valid-time>
+    </time-layout>
+    <time-layout time-coordinate="local" summarization="none">
+      <layout-key>k-p24h-n1-8</layout-key>
+      <start-valid-time>2015-05-13T11:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-14T07:00:00-05:00</end-valid-time>
+    </time-layout>
+    <time-layout time-coordinate="local" summarization="none">
+      <layout-key>k-p24h-n4-9</layout-key>
+      <start-valid-time>2015-05-14T07:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-15T07:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-15T07:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-16T07:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-16T07:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-17T07:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-17T07:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-18T07:00:00-05:00</end-valid-time>
+    </time-layout>
+    <time-layout time-coordinate="local" summarization="none">
+      <layout-key>k-p24h-n2-10</layout-key>
+      <start-valid-time>2015-05-14T07:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-15T07:00:00-05:00</end-valid-time>
+      <start-valid-time>2015-05-15T07:00:00-05:00</start-valid-time>
+      <end-valid-time>2015-05-16T07:00:00-05:00</end-valid-time>
+    </time-layout>
+    <parameters applicable-location="point1">
+      <temperature type="maximum" units="Fahrenheit" time-layout="k-p24h-n5-1">
+        <name>Daily Maximum Temperature</name>
+        <value>82</value>
+        <value>86</value>
+        <value>86</value>
+        <value>89</value>
+        <value>88</value>
+      </temperature>
+      <temperature type="minimum" units="Fahrenheit" time-layout="k-p24h-n5-2">
+        <name>Daily Minimum Temperature</name>
+        <value>71</value>
+        <value>72</value>
+        <value>73</value>
+        <value>74</value>
+        <value>73</value>
+      </temperature>
+      <temperature type="hourly" units="Fahrenheit" time-layout="k-p3h-n27-4">
+        <name>Temperature</name>
+        <value>82</value>
+        <value>79</value>
+        <value>75</value>
+        <value>73</value>
+        <value>72</value>
+        <value>71</value>
+        <value>77</value>
+        <value>83</value>
+        <value>84</value>
+        <value>82</value>
+        <value>76</value>
+        <value>74</value>
+        <value>73</value>
+        <value>72</value>
+        <value>78</value>
+        <value>84</value>
+        <value>86</value>
+        <value>82</value>
+        <value>74</value>
+        <value>74</value>
+        <value>87</value>
+        <value>83</value>
+        <value>75</value>
+        <value>75</value>
+        <value>85</value>
+        <value>82</value>
+        <value>75</value>
+      </temperature>
+      <precipitation type="liquid" units="inches" time-layout="k-p6h-n9-5">
+        <name>Liquid Precipitation Amount</name>
+        <value>0.16</value>
+        <value>0.08</value>
+        <value>0.07</value>
+        <value>0.02</value>
+        <value>0.04</value>
+        <value>0.02</value>
+        <value>0.03</value>
+        <value>0.03</value>
+        <value>0.02</value>
+      </precipitation>
+      <wind-speed type="sustained" units="knots" time-layout="k-p3h-n27-4">
+        <name>Wind Speed</name>
+        <value>14</value>
+        <value>12</value>
+        <value>7</value>
+        <value>7</value>
+        <value>6</value>
+        <value>7</value>
+        <value>11</value>
+        <value>13</value>
+        <value>13</value>
+        <value>14</value>
+        <value>12</value>
+        <value>10</value>
+        <value>8</value>
+        <value>8</value>
+        <value>9</value>
+        <value>11</value>
+        <value>12</value>
+        <value>12</value>
+        <value>11</value>
+        <value>11</value>
+        <value>15</value>
+        <value>15</value>
+        <value>13</value>
+        <value>13</value>
+        <value>13</value>
+        <value>11</value>
+        <value>9</value>
+      </wind-speed>
+      <direction type="wind" units="degrees true" time-layout="k-p3h-n27-4">
+        <name>Wind Direction</name>
+        <value>140</value>
+        <value>130</value>
+        <value>120</value>
+        <value>130</value>
+        <value>130</value>
+        <value>120</value>
+        <value>140</value>
+        <value>160</value>
+        <value>140</value>
+        <value>120</value>
+        <value>130</value>
+        <value>140</value>
+        <value>140</value>
+        <value>130</value>
+        <value>140</value>
+        <value>150</value>
+        <value>140</value>
+        <value>140</value>
+        <value>150</value>
+        <value>150</value>
+        <value>160</value>
+        <value>130</value>
+        <value>150</value>
+        <value>150</value>
+        <value>140</value>
+        <value>100</value>
+        <value>140</value>
+      </direction>
+      <temperature type="apparent" units="Fahrenheit" time-layout="k-p3h-n27-4">
+        <name>Apparent Temperature</name>
+        <value>86</value>
+        <value>79</value>
+        <value>75</value>
+        <value>73</value>
+        <value>72</value>
+        <value>71</value>
+        <value>77</value>
+        <value>88</value>
+        <value>90</value>
+        <value>87</value>
+        <value>76</value>
+        <value>74</value>
+        <value>73</value>
+        <value>72</value>
+        <value>78</value>
+        <value>89</value>
+        <value>92</value>
+        <value>87</value>
+        <value>74</value>
+        <value>74</value>
+        <value>94</value>
+        <value>89</value>
+        <value>75</value>
+        <value>75</value>
+        <value>91</value>
+        <value>87</value>
+        <value>75</value>
+      </temperature>
+      <precipitation type="snow" units="inches" time-layout="k-p6h-n9-5">
+        <name>Snow Amount</name>
+        <value xsi:nil="true"/>
+        <value xsi:nil="true"/>
+        <value xsi:nil="true"/>
+        <value xsi:nil="true"/>
+        <value xsi:nil="true"/>
+        <value xsi:nil="true"/>
+        <value xsi:nil="true"/>
+        <value xsi:nil="true"/>
+        <value xsi:nil="true"/>
+      </precipitation>
+      <probability-of-precipitation type="12 hour" units="percent" time-layout="k-p12h-n10-3">
+        <name>12 Hourly Probability of Precipitation</name>
+        <value>60</value>
+        <value>20</value>
+        <value>30</value>
+        <value>30</value>
+        <value>30</value>
+        <value>20</value>
+        <value>20</value>
+        <value>10</value>
+        <value>50</value>
+        <value>50</value>
+      </probability-of-precipitation>
+      <convective-hazard>
+        <outlook time-layout="k-p24h-n3-7">
+          <name>Convective Hazard Outlook</name>
+          <value>Slight Risk of Severe Thunderstorms</value>
+          <value>General Thunderstorms</value>
+          <value>General Thunderstorms</value>
+        </outlook>
+      </convective-hazard>
+      <convective-hazard>
+        <severe-component type="tornadoes" units="percent" time-layout="k-p24h-n1-8">
+          <name>Probability of Tornadoes</name>
+          <value>5</value>
+        </severe-component>
+      </convective-hazard>
+      <convective-hazard>
+        <severe-component type="hail" units="percent" time-layout="k-p24h-n1-8">
+          <name>Probability of Hail</name>
+          <value>15</value>
+        </severe-component>
+      </convective-hazard>
+      <convective-hazard>
+        <severe-component type="damaging thunderstorm winds" units="percent" time-layout="k-p24h-n1-8">
+          <name>Probability of Damaging Thunderstorm Winds</name>
+          <value>15</value>
+        </severe-component>
+      </convective-hazard>
+      <convective-hazard>
+        <severe-component type="extreme tornadoes" units="percent" time-layout="k-p24h-n1-8">
+          <name>Probability of Extreme Tornadoes</name>
+          <value>0</value>
+        </severe-component>
+      </convective-hazard>
+      <convective-hazard>
+        <severe-component type="extreme hail" units="percent" time-layout="k-p24h-n1-8">
+          <name>Probability of Extreme Hail</name>
+          <value>0</value>
+        </severe-component>
+      </convective-hazard>
+      <convective-hazard>
+        <severe-component type="extreme thunderstorm winds" units="percent" time-layout="k-p24h-n1-8">
+          <name>Probability of Extreme Thunderstorm Winds</name>
+          <value>0</value>
+        </severe-component>
+      </convective-hazard>
+      <convective-hazard>
+        <severe-component type="severe thunderstorms" units="percent" time-layout="k-p24h-n4-9">
+          <name>Total Probability of Severe Thunderstorms</name>
+          <value>0</value>
+          <value>0</value>
+          <value>0</value>
+          <value>0</value>
+        </severe-component>
+      </convective-hazard>
+      <convective-hazard>
+        <severe-component type="extreme severe thunderstorms" units="percent" time-layout="k-p24h-n2-10">
+          <name>Total Probability of Extreme Severe Thunderstorms</name>
+          <value>0</value>
+          <value>0</value>
+        </severe-component>
+      </convective-hazard>
+      <weather time-layout="k-p3h-n27-4">
+        <name>Weather Type, Coverage, and Intensity</name>
+        <weather-conditions>
+          <value coverage="likely" intensity="heavy" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="likely" intensity="heavy" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
+        <weather-conditions>
+          <value coverage="slight chance" intensity="none" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="slight chance" intensity="light" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
+        <weather-conditions>
+          <value coverage="slight chance" intensity="none" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="slight chance" intensity="light" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
+        <weather-conditions>
+          <value coverage="slight chance" intensity="none" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="slight chance" intensity="light" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
+        <weather-conditions>
+          <value coverage="slight chance" intensity="none" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="slight chance" intensity="light" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
+        <weather-conditions>
+          <value coverage="chance" intensity="none" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="chance" intensity="light" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
+        <weather-conditions>
+          <value coverage="chance" intensity="none" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="chance" intensity="light" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
+        <weather-conditions>
+          <value coverage="chance" intensity="none" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="chance" intensity="light" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
+        <weather-conditions>
+          <value coverage="chance" intensity="none" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="chance" intensity="light" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
+        <weather-conditions>
+          <value coverage="slight chance" intensity="none" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="slight chance" intensity="light" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
+        <weather-conditions>
+          <value coverage="slight chance" intensity="none" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="slight chance" intensity="light" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
+        <weather-conditions>
+          <value coverage="slight chance" intensity="none" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="slight chance" intensity="light" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
+        <weather-conditions>
+          <value coverage="slight chance" intensity="none" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="slight chance" intensity="light" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
+        <weather-conditions>
+          <value coverage="chance" intensity="none" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="chance" intensity="light" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
+        <weather-conditions>
+          <value coverage="chance" intensity="none" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="chance" intensity="light" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
+        <weather-conditions>
+          <value coverage="chance" intensity="none" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="chance" intensity="light" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
+        <weather-conditions>
+          <value coverage="chance" intensity="none" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="chance" intensity="light" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
+        <weather-conditions>
+          <value coverage="slight chance" intensity="none" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="slight chance" intensity="light" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
+        <weather-conditions>
+          <value coverage="slight chance" intensity="none" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="slight chance" intensity="light" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
+        <weather-conditions>
+          <value coverage="slight chance" intensity="none" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="slight chance" intensity="light" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
+        <weather-conditions>
+          <value coverage="slight chance" intensity="none" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="slight chance" intensity="light" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
+        <weather-conditions/>
+        <weather-conditions/>
+        <weather-conditions>
+          <value coverage="chance" intensity="none" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="chance" intensity="light" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
+        <weather-conditions>
+          <value coverage="chance" intensity="none" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="chance" intensity="light" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
+        <weather-conditions>
+          <value coverage="chance" intensity="none" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="chance" intensity="light" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
+        <weather-conditions>
+          <value coverage="chance" intensity="none" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="chance" intensity="light" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
+      </weather>
+      <conditions-icon type="forecast-NWS" time-layout="k-p3h-n27-4">
+        <name>Conditions Icons</name>
+        <icon-link>http://forecast.weather.gov/images/wtf/tsra60.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/tsra60.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/ntsra20.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/ntsra20.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/ntsra20.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/tsra20.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/tsra30.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/tsra30.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/scttsra30.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/tsra30.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/ntsra30.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/ntsra30.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/ntsra30.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/tsra30.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/tsra30.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/tsra30.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/tsra30.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/scttsra30.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/nscttsra20.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/tsra20.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/scttsra20.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/bkn.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/nbkn.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/tsra10.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/tsra50.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/tsra50.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/ntsra50.jpg</icon-link>
+      </conditions-icon>
+      <hazards time-layout="k-p1h-n61-6">
+        <name>Watches, Warnings, and Advisories</name>
+        <hazard-conditions>
+          <hazard hazardCode="FF.A" phenomena="Flash Flood" significance="Watch" hazardType="long duration">
+            <hazardTextURL>http://forecast.weather.gov/wwamap/wwatxtget.php?cwa=crp&amp;wwa=Flash%20Flood%20Watch</hazardTextURL>
+          </hazard>
+          <hazard hazardCode="TO.A:169" phenomena="Tornado" significance="Watch" eventTrackingNumber="169" hazardType="long duration">
+            <hazardTextURL>http://forecast.weather.gov/wwamap/wwatxtget.php?cwa=crp&amp;wwa=Tornado%20Watch</hazardTextURL>
+          </hazard>
+        </hazard-conditions>
+        <hazard-conditions>
+          <hazard hazardCode="FF.A" phenomena="Flash Flood" significance="Watch" hazardType="long duration">
+            <hazardTextURL>http://forecast.weather.gov/wwamap/wwatxtget.php?cwa=crp&amp;wwa=Flash%20Flood%20Watch</hazardTextURL>
+          </hazard>
+          <hazard hazardCode="TO.A:169" phenomena="Tornado" significance="Watch" eventTrackingNumber="169" hazardType="long duration">
+            <hazardTextURL>http://forecast.weather.gov/wwamap/wwatxtget.php?cwa=crp&amp;wwa=Tornado%20Watch</hazardTextURL>
+          </hazard>
+        </hazard-conditions>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+        <hazard-conditions/>
+      </hazards>
+    </parameters>
+  </data>
+</dwml>

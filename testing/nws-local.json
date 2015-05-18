@@ -1,0 +1,135 @@
+{
+	"operationalMode":"Production",
+	"srsName":"WGS 1984",
+	"creationDate":"2015-05-13T11:15:55-05:00",
+	"creationDateLocal":"13 May 10:45 am CDT",
+	"productionCenter":"Jackson, MS",
+	"credit":"http://www.srh.noaa.gov/jan",
+	"moreInformation":"http://weather.gov",
+	"location":{
+		"region":"srh",
+		"latitude":"33.46",
+		"longitude":"-88.8",
+		"elevation":"364",
+		"wfo":"JAN",
+		"timezone":"C|Y|6",
+		"areaDescription":"Mississippi State MS",
+		"radar":"KGWX",
+		"zone":"MSZ033",
+		"county":"MSC105",
+		"firezone":"MSZ033",
+		"metar":"KGTR"
+},
+	"time":{
+		"layoutKey":"k-p12h-n13-1",
+		"startPeriodName":[
+			"This Afternoon",
+			"Tonight",
+			"Thursday",
+			"Thursday Night",
+			"Friday",
+			"Friday Night",
+			"Saturday",
+			"Saturday Night",
+			"Sunday",
+			"Sunday Night",
+			"Monday",
+			"Monday Night",
+			"Tuesday"		
+		],
+		"startValidTime":[
+			"2015-05-13T12:00:00-05:00",
+			"2015-05-13T18:00:00-05:00",
+			"2015-05-14T06:00:00-05:00",
+			"2015-05-14T18:00:00-05:00",
+			"2015-05-15T06:00:00-05:00",
+			"2015-05-15T18:00:00-05:00",
+			"2015-05-16T06:00:00-05:00",
+			"2015-05-16T18:00:00-05:00",
+			"2015-05-17T06:00:00-05:00",
+			"2015-05-17T18:00:00-05:00",
+			"2015-05-18T06:00:00-05:00",
+			"2015-05-18T18:00:00-05:00",
+			"2015-05-19T06:00:00-05:00"	
+		],
+		"tempLabel":["High","Low","High","Low","High","Low","High","Low","High","Low","High","Low","High"]
+	},
+	"data":{
+		"temperature":["80","60","82","67","82","68","81","68","84","69","84","67","83"],		
+		"pop":[null,null,"30","20","60","50","50","20","40","30","50","40","50"],
+
+		"weather":[
+			"Mostly Sunny",
+			"Partly Cloudy",
+			"Chance Thunderstorms",
+			"Slight Chc Thunderstorms",
+			"Thunderstorms Likely",
+			"Chance Thunderstorms",
+			"Chance Thunderstorms",
+			"Slight Chc Thunderstorms",
+			"Chance Thunderstorms",
+			"Chance Thunderstorms",
+			"Chance Thunderstorms",
+			"Chance Thunderstorms",
+			"Chance Thunderstorms"
+			],
+		"iconLink":[
+			"http://forecast.weather.gov/images/wtf/medium/sct.png",
+			"http://forecast.weather.gov/images/wtf/medium/nsct.png",
+			"http://forecast.weather.gov/images/wtf/medium/scttsra30.png",
+			"http://forecast.weather.gov/images/wtf/medium/ntsra20.png",
+			"http://forecast.weather.gov/images/wtf/medium/tsra60.png",
+			"http://forecast.weather.gov/images/wtf/medium/ntsra50.png",
+			"http://forecast.weather.gov/images/wtf/medium/tsra50.png",
+			"http://forecast.weather.gov/images/wtf/medium/nscttsra20.png",
+			"http://forecast.weather.gov/images/wtf/medium/scttsra40.png",
+			"http://forecast.weather.gov/images/wtf/medium/ntsra30.png",
+			"http://forecast.weather.gov/images/wtf/medium/tsra50.png",
+			"http://forecast.weather.gov/images/wtf/medium/ntsra40.png",
+			"http://forecast.weather.gov/images/wtf/medium/tsra50.png"
+			],
+		"hazard":[
+
+			],
+		"hazardUrl":[
+
+			],
+		"text":[
+			"Mostly sunny, with a high near 80. Northeast wind around 5 mph. ",
+			"Partly cloudy, with a low around 60. Northeast wind around 5 mph. ",
+			"A 30 percent chance of showers and thunderstorms after 1pm.  Increasing clouds, with a high near 82. South southeast wind 5 to 10 mph.  New rainfall amounts of less than a tenth of an inch, except higher amounts possible in thunderstorms. ",
+			"A slight chance of showers and thunderstorms.  Cloudy, with a low around 67. South southeast wind around 5 mph.  Chance of precipitation is 20%.",
+			"Showers and thunderstorms likely.  Mostly cloudy, with a high near 82. South southeast wind 5 to 10 mph.  Chance of precipitation is 60%. New rainfall amounts between a tenth and quarter of an inch, except higher amounts possible in thunderstorms. ",
+			"A chance of showers and thunderstorms before 1am, then a slight chance of showers.  Cloudy, with a low around 68. South southeast wind 5 to 10 mph.  Chance of precipitation is 50%. New rainfall amounts between a quarter and half of an inch possible. ",
+			"A 50 percent chance of showers and thunderstorms after noon.  Mostly cloudy, with a high near 81. South southeast wind 5 to 10 mph. ",
+			"A 20 percent chance of showers and thunderstorms.  Mostly cloudy, with a low around 68. South southeast wind around 10 mph. ",
+			"A 40 percent chance of showers and thunderstorms.  Partly sunny, with a high near 84. South wind around 10 mph. ",
+			"A 30 percent chance of showers and thunderstorms.  Mostly cloudy, with a low around 69.",
+			"A 50 percent chance of showers and thunderstorms.  Mostly cloudy, with a high near 84.",
+			"A 40 percent chance of showers and thunderstorms.  Mostly cloudy, with a low around 67.",
+			"A 50 percent chance of showers and thunderstorms.  Mostly cloudy, with a high near 83."			]
+		},
+		"currentobservation":{
+			"id":"KGTR",
+			"name":"Columbus/West Point/Starkville, Golden Triangle Regional Airport",
+			"elev":"266",
+			"latitude":"33.45",
+			"longitude":"-88.58",
+			"Date":"13 May 10:45 am CDT",
+			"Temp":"73",
+			"Dewp":"50",
+			"Relh":"44",
+			"Winds":"9",
+			"Windd":"50",
+			"Gust":"0",
+			"Weather":"Clear",
+			"Weatherimage":"skc.png",
+			"Visibility":"10.00",
+			"Altimeter":"NA",
+			"SLP":"30.27",
+			"timezone":"CDT",
+			"state":"MS",
+			"WindChill":"NA"
+		}
+	}
+	
