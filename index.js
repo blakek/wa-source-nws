@@ -91,7 +91,24 @@ function getLocalWeatherJSON(callback) {
 
 function getLocalWeatherXML(callback) {
 	// Local conditions (part 1)
-	callback(null, fs.readFileSync(__dirname + '/testing/nws-local-test.xml').toString());
+	var doc = new xmldoc.XmlDocument(fs.readFileSync(__dirname + '/testing/nws-local-test.xml').toString())
+	  , parameters = doc.descendantWithPath('data.parameters')
+	  , temps = {}
+	  , pops_hourly = [];
+
+	parameters.childrenNamed('temperature').forEach(function (n) {
+		temps[n.attr.type] = n;
+	});
+
+	parameters.childNamed('probability-of-precipitation').childrenNamed('value').forEach(function (pop) {
+		pops_hourly.push(pop.val);
+	});
+
+	callback(null, {
+		parameters: parameters,
+		temps: temps,
+		pops_hourly: pops_hourly
+	});
 }
 
 function getWeatherData(location, on_finish) {
@@ -118,19 +135,6 @@ function getWeatherData(location, on_finish) {
 				return { error: err };
 			}
 
-			var doc = new xmldoc.XmlDocument(results.x)
-			  , parameters = doc.descendantWithPath('data.parameters')
-			  , temps = {}
-			  , pops_hourly = [];
-
-			parameters.childrenNamed('temperature').forEach(function (n) {
-				temps[n.attr.type] = n;
-			});
-
-			parameters.childNamed('probability-of-precipitation').childrenNamed('value').forEach(function (pop) {
-				pops_hourly.push(pop.val);
-			});
-
 			lastResults = {
 				last_updated: now(),
 				location: {
@@ -142,10 +146,10 @@ function getWeatherData(location, on_finish) {
 				alerts: results.s.nearbyAlerts,
 				alert_count: (results.s.nearbyAlerts) ? (results.s.nearbyAlerts.length) : 0,
 				now: {
-					temp: temps.hourly.valueWithPath('value'),
-					temp_apparent: temps.apparent.valueWithPath('value'),
+					temp: results.x.temps.hourly.valueWithPath('value'),
+					temp_apparent: results.x.temps.apparent.valueWithPath('value'),
 					conditions: results.j.currentobservation.Weather,
-					icon: parameters.childNamed('conditions-icon').valueWithPath('icon-link'),
+					icon: results.x.parameters.childNamed('conditions-icon').valueWithPath('icon-link'),
 					precipitation: {
 						probability: results.j.data.pop[0]
 					},
@@ -156,8 +160,8 @@ function getWeatherData(location, on_finish) {
 				},
 				today: {
 					temp: {
-						high: temps.maximum.valueWithPath('value'),
-						low: temps.minimum.valueWithPath('value')
+						high: results.x.temps.maximum.valueWithPath('value'),
+						low: results.x.temps.minimum.valueWithPath('value')
 					},
 					summary: results.j.data.text[0],
 					icon: results.j.data.iconLink[0]
