@@ -5,6 +5,10 @@ var fs = require('fs')
   , geolib = require('geolib')
   , moment = require('moment');
 
+var STORM_URI      = '/testing/nws-national-alerts.xml'
+  , LOCAL_JSON_URI = '/testing/nws-local.json'
+  , LOCAL_XML_URI  = '/testing/nws-local-test.xml';
+
 var lastCall = 0
   , cacheTime = 60
   , lastResults = {};
@@ -17,9 +21,14 @@ function now() {
 	return Math.floor(Date.now() / 1000);
 }
 
+function parseURI(uri, location) {
+	return uri.replace(/\$\{latitude\}/g, location.latitude)
+	          .replace(/\$\{longitude\}/g, location.longitude);
+}
+
 function findNearestStorms(location, callback) {
 	// National alerts
-	var na = fs.readFileSync(__dirname + '/testing/nws-national-alerts.xml')
+	var na = fs.readFileSync(__dirname + parseURI(STORM_URI, location))
 	  , nadoc = new xmldoc.XmlDocument(na);
 
 	var closestStorm = {}
@@ -85,14 +94,14 @@ function findNearestStorms(location, callback) {
 	});
 }
 
-function getLocalWeatherJSON(callback) {
+function getLocalWeatherJSON(location, callback) {
 	// Local conditions (part 2)
-	callback(null, JSON.parse(fs.readFileSync(__dirname + '/testing/nws-local.json')));
+	callback(null, JSON.parse(fs.readFileSync(__dirname + parseURI(LOCAL_JSON_URI, location))));
 }
 
-function getLocalWeatherXML(callback) {
+function getLocalWeatherXML(location, callback) {
 	// Local conditions (part 1)
-	var doc = new xmldoc.XmlDocument(fs.readFileSync(__dirname + '/testing/nws-local-test.xml').toString())
+	var doc = new xmldoc.XmlDocument(fs.readFileSync(__dirname + parseURI(LOCAL_XML_URI, location)).toString())
 	  , parameters = doc.descendantWithPath('data.parameters')
 	  , temps = {}
 	  , pops_hourly = [];
@@ -125,8 +134,12 @@ function getWeatherData(location, on_finish) {
 
 	async.parallel(
 		{
-			j: getLocalWeatherJSON,
-			x: getLocalWeatherXML,
+			j: function (cb) {
+				getLocalWeatherJSON(location, cb);
+			},
+			x: function (cb) {
+				getLocalWeatherXML(location, cb);
+			},
 			s: function (cb) {
 				findNearestStorms(location, cb);
 			}
