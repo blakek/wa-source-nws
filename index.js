@@ -143,8 +143,11 @@ function getWeatherData(location, on_finish) {
 					name: results.j.location.areaDescription
 				},
 				nearest_storm: results.s.closestStorm,
-				alerts: results.s.nearbyAlerts,
-				alert_count: (results.s.nearbyAlerts) ? (results.s.nearbyAlerts.length) : 0,
+				nearby_wwa: { // Nearby watches, warnings, and alerts
+					alerts: results.s.nearbyAlerts,
+					count: (results.s.nearbyAlerts) ? (results.s.nearbyAlerts.length) : 0,
+					radius: options.alertRange
+				},
 				now: {
 					temp: results.x.temps.hourly.valueWithPath('value'),
 					temp_apparent: results.x.temps.apparent.valueWithPath('value'),
@@ -167,6 +170,20 @@ function getWeatherData(location, on_finish) {
 					icon: results.j.data.iconLink[0]
 				}
 			};
+
+			if (typeof results.j.hazard !== 'undefined') {
+				results.j.hazard.forEach(function (hazard, index) {
+					lastResults.alerts.push({
+						title: hazard,
+						uri: results.j.hazardUrl[index]
+					});
+
+					lastResults.alerts.push(hazard);
+				});
+			} else {
+				lastResults.alerts = [];
+				lastResults.alert_count = 0;
+			}
 
 			on_finish(lastResults);
 		}
