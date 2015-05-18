@@ -135,7 +135,8 @@ function getLocalWeatherXML(location, callback) {
 		parameters: parameters,
 		temps: temps,
 		pops_hourly: pops_hourly,
-		daily_hazard_summary: daily_hazard_summary
+		daily_hazard_summary: daily_hazard_summary,
+		probabilities: hazards
 	});
 }
 
@@ -175,7 +176,8 @@ function getWeatherData(location, on_finish) {
 					name: results.j.location.areaDescription
 				},
 				hazard_outlook: {
-					hazard_summary: results.x.daily_hazard_summary
+					hazard_summary: results.x.daily_hazard_summary,
+					probabilities: results.x.probabilities
 				},
 				nearest_storm: results.s.closestStorm,
 				nearby_wwa: { // Nearby watches, warnings, and alerts
