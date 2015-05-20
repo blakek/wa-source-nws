@@ -1,6 +1,6 @@
 {
   "name": "wa-source-nws",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "weather-aware source library using the National Weather Service",
   "main": "index.js",
   "scripts": {
