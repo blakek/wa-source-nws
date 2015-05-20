@@ -1,41 +1,60 @@
-var fs = require('fs')
-  , path = require('path')
+var path = require('path')
   , async = require('async')
   , xmldoc = require('xmldoc')
   , geolib = require('geolib')
-  , moment = require('moment');
-
-var STORM_URI      = '/testing/nws-national-alerts.xml'
-  , LOCAL_JSON_URI = '/testing/nws-local.json'
-  , LOCAL_XML_URI  = '/testing/nws-local-test.xml';
+  , moment = require('moment')
+  , simpleRequest = require('./lib/simpleRequest');
 
 var lastCall = 0
   , cacheTime = 60
   , lastResults = {};
 
 var options = {
-	alertRange: 50
+	alertRange: 50,
+	testing: false
+};
+
+var sources = {
+	nationalAlerts: {
+		uri: 'http://alerts.weather.gov/cap/us.php?x=0',
+		testing_uri: 'file://' + __dirname + '/testing/nws-national-alerts.xml'
+	},
+	localJSON: {
+		uri: 'http://forecast.weather.gov/MapClick.php?textField1=${latitude}&textField2=${longitude}&FcstType=json',
+		testing_uri: 'file://' + __dirname + '/testing/nws-local.json'
+	},
+	localXML: {
+		uri: 'http://graphical.weather.gov/xml/SOAP_server/ndfdXMLclient.php?whichClient=NDFDgen&lat=${latitude}&lon=${longitude}&zipCodeList=&centerPointLat=&centerPointLon=&distanceLat=&distanceLon=&featureType=&requestedTime=&startTime=&endTime=&compType=&propertyName=&product=time-series&Unit=e&maxt=maxt&mint=mint&temp=temp&qpf=qpf&pop12=pop12&snow=snow&wspd=wspd&wdir=wdir&wx=wx&icons=icons&appt=appt&conhazo=conhazo&ptornado=ptornado&phail=phail&ptstmwinds=ptstmwinds&pxtornado=pxtornado&pxhail=pxhail&pxtstmwinds=pxtstmwinds&ptotsvrtstm=ptotsvrtstm&pxtotsvrtstm=pxtotsvrtstm&wwa=wwa',
+		testing_uri: 'file://' + __dirname + '/testing/nws-local-test.xml'
+	},
 };
 
 function now() {
 	return Math.floor(Date.now() / 1000);
 }
 
-function parseURI(uri, location) {
+function parseURI(source_obj, location) {
+	var uri = (options.testing) ? source_obj.testing_uri : source_obj.uri;
+
 	return uri.replace(/\$\{latitude\}/g, location.latitude)
 	          .replace(/\$\{longitude\}/g, location.longitude);
 }
 
-function findNearestStorms(location, callback) {
-	// National alerts
-	var na = fs.readFileSync(__dirname + parseURI(STORM_URI, location))
-	  , nadoc = new xmldoc.XmlDocument(na);
+function getNearestStorms(location, callback) {
+	simpleRequest(parseURI(sources.nationalAlerts, location), function (data) {
+		findNearestStorms(location, data, callback);
+	});
+}
 
-	var closestStorm = {}
-	  , closestStormDistance
-	  , closestStormBearing
-	  , allAlerts = []
-	  , nearbyAlerts = [];
+function findNearestStorms(location, data, callback) {
+	// National alerts
+	var nadoc = new xmldoc.XmlDocument(data);
+
+	var ret = {
+		closestStorm: {},
+		allAlerts: [],
+		nearbyAlerts: []
+	};
 
 	nadoc.childrenNamed('entry').forEach(function (n) {
 		var alert = {
@@ -63,45 +82,49 @@ function findNearestStorms(location, callback) {
 
 			var distance = geolib.convertUnit('mi', geolib.getDistance(location, loc));
 
-			if (closestStorm.event === undefined || distance < closestStormDistance) {
-				closestStorm = alert;
-				closestStorm.distance = distance;
-				closestStorm.bearing = geolib.getBearing(location, loc);
+			if (typeof ret.closestStorm.event === 'undefined' || distance < ret.closestStorm.distance) {
+				ret.closestStorm = alert;
+				ret.closestStorm.distance = distance;
+				ret.closestStorm.bearing = geolib.getBearing(location, loc);
 			}
 		});
 
 		if (geolib.isPointInside(location, alert.polygon)) {
 			alert.distance = 0;
-			nearbyAlerts.push(alert);
+			ret.nearbyAlerts.push(alert);
 		} else {
 			alert.polygon.some(function (point) {
 				var distance = geolib.convertUnit('mi', geolib.getDistance(location, point));
 				if (distance < options.alertRange) {
 					alert.distance = distance;
-					nearbyAlerts.push(alert);
+					ret.nearbyAlerts.push(alert);
 				}
 				return true; // Go to next alert if one of the points of this alert is within the search radius
 			});
 		}
 
-		allAlerts.push(alert);
+		ret.allAlerts.push(alert);
 	});
 
-	callback(null, {
-		closestStorm: closestStorm,
-		allAlerts: allAlerts,
-		nearbyAlerts: nearbyAlerts
-	});
+	callback(null, ret);
 }
 
 function getLocalWeatherJSON(location, callback) {
 	// Local conditions (part 2)
-	callback(null, JSON.parse(fs.readFileSync(__dirname + parseURI(LOCAL_JSON_URI, location))));
+	simpleRequest(parseURI(sources.localJSON, location), function (data) {
+		callback(null, JSON.parse(data));
+	});
 }
 
 function getLocalWeatherXML(location, callback) {
+	simpleRequest(parseURI(sources.localXML, location), function (data) {
+		parseLocalWeatherXML(location, data, callback);
+	});
+}
+
+function parseLocalWeatherXML(location, data, callback) {
 	// Local conditions (part 1)
-	var doc = new xmldoc.XmlDocument(fs.readFileSync(__dirname + parseURI(LOCAL_XML_URI, location)).toString())
+	var doc = new xmldoc.XmlDocument(data)
 	  , parameters = doc.descendantWithPath('data.parameters')
 	  , temps = {}
 	  , pops_hourly = []
@@ -160,7 +183,7 @@ function getWeatherData(location, on_finish) {
 				getLocalWeatherXML(location, cb);
 			},
 			s: function (cb) {
-				findNearestStorms(location, cb);
+				getNearestStorms(location, cb);
 			}
 		},
 		function (err, results) {
