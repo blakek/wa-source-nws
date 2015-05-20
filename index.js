@@ -228,6 +228,11 @@ function getWeatherData(location, on_finish) {
 					},
 					summary: results.j.data.text[0],
 					icon: nws2waIcon(results.j.data.iconLink[0])
+				},
+				units: {
+					temp: 'F',
+					distance: 'mi',
+					speed: 'mph'
 				}
 			};
 
