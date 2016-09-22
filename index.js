@@ -84,7 +84,7 @@ function findNearestStorms(location, data, callback) {
 
 			if (typeof ret.closestStorm.event === 'undefined' || distance < ret.closestStorm.distance) {
 				ret.closestStorm = alert;
-				ret.closestStorm.distance = distance;
+				ret.closestStorm.distance = Math.round(distance);
 				ret.closestStorm.bearing = geolib.getBearing(location, loc);
 			}
 		});
@@ -96,7 +96,7 @@ function findNearestStorms(location, data, callback) {
 			alert.polygon.some(function (point) {
 				var distance = geolib.convertUnit('mi', geolib.getDistance(location, point));
 				if (distance < options.alertRange) {
-					alert.distance = distance;
+					alert.distance = Math.round(distance);
 					ret.nearbyAlerts.push(alert);
 				}
 				return true; // Go to next alert if one of the points of this alert is within the search radius
@@ -212,7 +212,7 @@ function getWeatherData(location, on_finish) {
 					temp: results.x.temps.hourly.valueWithPath('value'),
 					temp_apparent: results.x.temps.apparent.valueWithPath('value'),
 					conditions: results.j.currentobservation.Weather,
-					icon: nws2waIcon(results.x.parameters.childNamed('conditions-icon').valueWithPath('icon-link')),
+                    icon: nws2waIcon(results.j.currentobservation.Weatherimage),
 					precipitation: {
 						probability: results.j.data.pop[0]
 					},
@@ -309,7 +309,7 @@ function nws2waIcon(origText) {
 			return 'strong-wind';
 		case 'ra':
 		case 'nra':
-			return 'wi-rain';
+			return 'rain';
 		case 'nsvrtsra':
 			return 'tornado';
 		case 'mist':
@@ -320,12 +320,13 @@ function nws2waIcon(origText) {
 }
 
 module.exports = {
-	source: {
-		id: 'nws-testing', // What we use to identify this source (required)
-		name: 'National Weather Service (under testing)', // Human-readable name of the source (required)
-		enabled: true, // Should this be shown as an option to users (requred for now)
-		source_site: 'http://www.weather.gov/', // Website of source for info (optional)
-		last_call: undefined // Last time this source was called. Used for caching request results (esp. to keep from using up free API keys)
+	info: {
+		id: 'nws-testing',
+		name: 'National Weather Service (under testing)',
+		enabled: true,
+        needs_api_key: false,
+		source_site: 'http://www.weather.gov/',
+		last_call: undefined
 	},
 	getWeatherData: getWeatherData,
 	options: options
