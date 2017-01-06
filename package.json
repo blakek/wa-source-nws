@@ -19,10 +19,10 @@
   "author": "Blake Knight <oss.ideas@gmail.com> (http://blakek.me/)",
   "license": "MIT",
   "dependencies": {
-    "async": "^0.9.0",
+    "async": "^2.1.4",
     "geolib": "^2.0.14",
     "moment": "^2.10.3",
-    "xmldoc": "^0.3.0"
+    "xmldoc": "^1.0.0"
   },
   "devDependencies": {},
   "repository": {
